@@ -1,0 +1,11 @@
+services:
+  docker-utils:
+    build: .
+    container_name: docker-utils
+    restart: always
+    ports:
+      - 8985:80
+    entrypoint: /app/entrypoint.sh
+    volumes:
+      - ./:/app
+      - /var/run/docker.sock:/var/run/docker.sock
