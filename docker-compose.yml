@@ -9,3 +9,8 @@ services:
     volumes:
       - ./:/app
       - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - proxynet
+networks:
+  proxynet:
+    name: yd_network
